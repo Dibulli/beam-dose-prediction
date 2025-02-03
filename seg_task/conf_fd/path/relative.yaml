@@ -1,0 +1,13 @@
+dicom_path: /Users/mr.chai/Desktop/2200785467
+#dicom_path: /Users/mr.chai/Data/NPC validation/20170703___PINNAPP3___RT000495
+
+train_path: ./data/train/
+#test_path: ./data/test/
+validation_path: ./data/validation/
+#glance_img_path: ./data/check_img/
+#check_img_path: ./data/check_img/
+
+predict_dicom_path: /Users/mr.chai/Data/NPC_by_szh/05936168_imrt
+dose_output_path: /Users/mr.chai/Desktop
+dose_clip_threshold: 5
+#test_path : /Users/mr.chai/Desktop/h5

@@ -1,0 +1,4 @@
+thread_num: 1
+remove_data_with_problems: False
+val_flag: True
+val_percentage: 10

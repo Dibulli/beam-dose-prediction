@@ -1,0 +1,9 @@
+# learn_rate: 1e-04
+# batch_size: 6
+# do_validation: True
+# epochs: 40000
+# lr_decay_rate: 0.1
+# lr_decay_epoch: 20000
+# save_period: 1
+# train_loader_works: 4
+# validation_load_works: 4

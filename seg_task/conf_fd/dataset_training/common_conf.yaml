@@ -1,0 +1,6 @@
+equal_pt_weight: False
+sample_per_pt: 100
+channels_of_input_images: 1
+channels_of_input_masks: 15
+# channels of input masks = number of masks + 1(Beam contour channel)
+channels_of_output_mask: 1

@@ -1,0 +1,71 @@
+defaults:
+  - hydra/job_logging: colorlog
+  - hydra/hydra_logging: colorlog
+  - dataset_generation: common_conf
+  - dataset_training: common_conf
+  - device: gpu0
+  - glance_checking: common_conf
+  - image_dim: ct_512
+  - image_normalization: ct_fix
+  # - path: relative
+  - roi_conf: npc_zy
+  - train_conf: seg_task_64g_2080ti
+
+continue_train: False
+model_file_path: ../model/npc_dose_prediction.pth
+dose_clip_threshold: 5
+
+# hydra:
+#   verbose: True
+
+dicom_path: /data/szh/batch_test/
+train_path: /data/szh/h5_512_prune_ptv/train
+validation_path: /data/szh/h5_512_prune_ptv/validation
+# predict_dose_report
+pred_path: /Users/mr.chai/Desktop/02209225.npy
+box_size: 10
+dose_glance_output: /Volumes/NPC预测数据盘/单野预测2024/DVH_Visual/mask_pred_single
+predict_dicom_path: /data/szh/test_data/
+
+test_out_path: /home/varian/dose_prediction/testing_out
+glance_img_path: /home/varian/dose_prediction/check_img
+check_img_path: /home/varian/dose_prediction/check
+#dose_output_path: /Volumes/NPC预测数据盘/单野预测2024/临时存储2/1single + 1contribution
+#for DVH geneartor
+#test_path: /mnt/sdb/szh/pred_h5s/
+fig_output: /Volumes/NPC预测数据盘/单野预测2024/临时存储2/graph
+dose_fig_output: /Users/mr.chai/PycharmProjects/Single_dose_pred_256/seg_task/pics/dose_compare
+#h5_path: /Users/mr.chai/PycharmProjects/single_beam_dose_prediction/seg_task/segformer/data/test/df86429a.h5
+#
+use_adaptive_roi_weight: False
+model_type: unet
+# beam_index: 0
+
+lr_flip: False
+loss: dice_loss
+learn_rate: 5e-05
+weight_decay: 1e-06
+batch_size: 1
+do_validation: True
+epochs: 70
+lr_decay_rate: 0.4
+lr_decay_epoch: 100
+save_period: 1
+train_loader_works: 5
+validation_load_works: 5
+optimizer: RMSprop
+
+eud_parameter_list: [[0, -10, "ptv70"],         # ptv70
+                      [1, -10, "ptv66"],         # ptv66
+                      [2, -10, "ptv60"],         # ptv60
+                      [3, -10, "ptv54"],         # ptv54
+                      [4, 16, "brain stem"],          # brain stem
+                      [5, 20, "spinal cord"],          # spinal cord
+                      [6, 1, "left parotid"],           # left parotid
+                      [7, 1, "right parotid"],           # right parotid
+                      [10, 16, "left nerve"],         # left nerve
+                      [11, 16, right nerve"]]         # right nerve
+
+colorset14: ['brown', 'blue', 'red', 'green', 'orange', 'darkblue', 'darkgreen', 'darkred', 'cyan',
+  'pink', 'gray', "blueviolet", 'purple', 'lavender', 'crimson']
+

@@ -1,0 +1,4 @@
+roi_color_set: set1  # 'tps' or name in conf/roi_color_set
+no_color_for_body: False
+roi_color_overlay_alpha: 0.7
+gen_mask_img_for_each_roi: True

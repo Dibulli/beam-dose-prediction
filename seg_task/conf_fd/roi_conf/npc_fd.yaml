@@ -1,0 +1,95 @@
+roi_dicts:
+  - name:
+    - ptvap704
+    - PGTV_all
+    mask_channel: 0
+    use_fuzzy_match: True
+    dvh_name: PTV70
+
+  - name: ptvap660
+    mask_channel: 1
+    use_fuzzy_match: True
+    dvh_name: PTV66
+  - name:
+    - ptvap600
+    - ptvap608
+    - PTV1
+    mask_channel: 2
+    use_fuzzy_match: True
+    dvh_name: PTV60
+  - name:
+    - ptvap540
+    - PTV2
+    mask_channel: 3
+    use_fuzzy_match: True
+    dvh_name: PTV54
+  - name:
+      - brainstem
+      - STEM
+      - Brain Stem
+    mask_channel: 4
+    use_fuzzy_match: True
+    dvh_name: Brainstem
+  - name:
+    - SC
+    - Cord
+    mask_channel: 5
+    use_fuzzy_match: True
+    dvh_name: Spinalcord
+  - name:
+      - parotid-l
+      - L-pariod
+      - l-parotid
+      - parotid_l
+    mask_channel: 6
+    use_fuzzy_match: True
+    dvh_name: LeftParotid
+  - name:
+      - parotid-r
+      - R-paroid
+      - r-parotid
+      - parotid_r
+    mask_channel: 7
+    use_fuzzy_match: True
+    dvh_name: RightParotid
+
+  - name:
+    - l-lens
+    - len_l
+    mask_channel: 8
+    use_fuzzy_match: True
+    dvh_name: LeftLen
+  - name:
+    - r-lens
+    - len_r
+    mask_channel: 9
+    use_fuzzy_match: True
+    dvh_name: RightLen
+  - name:
+    - l-nerve
+    - optic nerve_l
+    mask_channel: 10
+    use_fuzzy_match: True
+    dvh_name: LeftNerve
+  - name:
+    - r-nerve
+    - optic nerve_r
+    mask_channel: 11
+    use_fuzzy_match: True
+    dvh_name: RightNerve
+  - name:
+      - oral cavity
+      - oralcavity
+    mask_channel: 12
+    use_fuzzy_match: True
+    dvh_name: OralCavity
+  - name: larynx
+    mask_channel: 13
+    use_fuzzy_match: True
+    dvh_name: Larynx
+  - name:
+    - body
+    - patient
+    mask_channel: 14
+    use_fuzzy_match: True
+    dvh_name: Body

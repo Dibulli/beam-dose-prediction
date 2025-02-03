@@ -1,0 +1,6 @@
+#true_path: /Users/mr.chai/Desktop/499390_truedose.npy
+pred_path: /Users/mr.chai/Desktop/02209225.npy
+box_size: 10
+dose_glance_output: /Users/mr.chai/Desktop/zy_data_test
+predict_dicom_path: /Users/mr.chai/Desktop/02209225/
+# predict dicom path 要在dcm的root目录且为dir。

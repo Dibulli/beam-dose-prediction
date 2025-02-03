@@ -1,0 +1,3 @@
+norm_method: 'fix'
+norm_low: -1024
+norm_high: 2048

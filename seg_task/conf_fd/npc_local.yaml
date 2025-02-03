@@ -1,0 +1,29 @@
+defaults:
+  - hydra/job_logging: colorlog
+  - hydra/hydra_logging: colorlog
+  - dataset_generation: thread1_conf
+  - dataset_training: common_conf
+  - device: cpu
+  - glance_checking: common_conf
+  - image_dim: ct_512
+  - image_normalization: ct_fix
+  - path: relative
+  - roi_conf: npc_zy
+  - train_conf: seg_task_16g_1080
+
+continue_train: False
+model_file_path: ../model/npc_dose_prediction.pth
+model_type: segformer
+beam_index: "1"
+
+
+eud_parameter_list: [[0, -10, "ptv70"],         # ptv70
+                      [1, -10, "ptv66"],         # ptv66
+                      [2, -10, "ptv60"],         # ptv60
+                      [3, -10, "ptv54"],         # ptv54
+                      [4, 16, "brain stem"],          # brain stem
+                      [5, 20, "spinal cord"],          # spinal cord
+                      [6, 1, "left parotid"],           # left parotid
+                      [7, 1, "right parotid"],           # right parotid
+                      [10, 16, "left nerve"],         # left nerve
+                      [11, 16, right nerve"]]         # right nerve
