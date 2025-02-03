@@ -289,12 +289,12 @@ class SegModel:
             # input_single = einops.rearrange(pred_single, 'b c h w -> c b h w')
             # pred_total = self.model_D(input_single)
             # loss = torch.nn.L1Loss()(pred_total, total_true_dose)
-            single_dose_loss = torch.nn.L1Loss()(pred_single, doses)
+            loss = torch.nn.L1Loss()(pred_single, doses)
             # kl_loss = kl_div(pred_single.softmax(dim=0).log(), doses.softmax(dim=0))
-            pred_all = torch.sum(pred_single, dim=0, keepdim=True)
+            # pred_all = torch.sum(pred_single, dim=0, keepdim=True)
 
-            total_loss = torch.nn.L1Loss()(pred_all, total_true_dose)
-            loss = 10 * single_dose_loss +  total_loss
+            # total_loss = torch.nn.L1Loss()(pred_all, total_true_dose)
+            # loss = 10 * single_dose_loss +  total_loss
             # ptv_pred = pred * ptvs
             # ptv_real = doses * ptvs
             # oar_pred = pred * oars
@@ -478,13 +478,13 @@ class SegModel:
             """input=[1, 14, 512, 512]"""
 
             pred_single = self.modelA(transformer_input_ib)
-            single_dose_loss = torch.nn.L1Loss()(pred_single, doses)
+            loss = torch.nn.L1Loss()(pred_single, doses)
 
             # kl_loss = kl_div(pred_single.softmax(dim=0).log(), doses.softmax(dim=0))
-            pred_all = torch.sum(pred_single, dim=0, keepdim=True)
+            # pred_all = torch.sum(pred_single, dim=0, keepdim=True)
 
-            total_loss = torch.nn.L1Loss()(pred_all, total_true_dose)
-            loss = 10 * single_dose_loss + total_loss
+            # total_loss = torch.nn.L1Loss()(pred_all, total_true_dose)
+            # loss = 10 * single_dose_loss + total_loss
             # ptv_pred = pred * ptvs
             # ptv_real = doses * ptvs
             # oar_pred = pred * oars
